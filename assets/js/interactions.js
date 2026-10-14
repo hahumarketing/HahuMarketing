@@ -2,7 +2,7 @@
 (()=>{
  const toggle=document.querySelector('.chat-toggle'),panel=document.querySelector('#chat-panel'),close=document.querySelector('.chat-close'),message=document.querySelector('#chat-message'),send=document.querySelector('#chat-send'),note=document.querySelector('#chat-note');
  const wa=(window.SITE_CONFIG?.whatsapp||'').replace(/\D/g,'');const valid=/^\d{8,15}$/.test(wa);
- function updateChat(){if(valid){send.href='https://wa.me/'+wa+'?text='+encodeURIComponent(message.value.trim()||'Hello, I would like to discuss a project with hahumarketing.');send.target='_blank';send.rel='noopener noreferrer';send.textContent='Continue on WhatsApp ↗';note.textContent='Opens WhatsApp. Review your message and press Send there.';}else{send.href='contact.html';send.textContent='Continue to inquiry ↗';}}
+ function updateChat(){if(valid){send.href='https://wa.me/'+wa+'?text='+encodeURIComponent(message.value.trim()||'Hello, I would like to discuss a project with Hahu Marketing.');send.target='_blank';send.rel='noopener noreferrer';send.textContent='Continue on WhatsApp ↗';note.textContent='Opens WhatsApp. Review your message and press Send there.';}else{send.href='contact.html';send.textContent='Continue to inquiry ↗';}}
  function shut(){panel.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.focus();}
  toggle.addEventListener('click',()=>{const open=panel.hidden;panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)close.focus();});close.addEventListener('click',shut);
  document.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>{message.value=b.dataset.chat;updateChat();message.focus();}));message.addEventListener('input',updateChat);
