@@ -1,6 +1,6 @@
 window.SITE_CONFIG = {
-  "brand": "Hahu Marketing",
-  "ownerName": "Hahu Marketing",
+  "brand": "hahumarketing",
+  "ownerName": "hahumarketing",
   "email": "hahumarketinginfo@gmail.com",
   "phone": "+1 443-333-9976",
   "whatsapp": "14433339976",
