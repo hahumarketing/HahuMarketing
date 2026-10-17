@@ -7,8 +7,8 @@ window.SITE_CONFIG = {
   "formEndpoint": "https://formspree.io/f/mjygajon",
   "siteUrl": "https://hahumarketing.com",
   "prices": {
-    "starter": 95000,
-    "business": 130000,
+    "starter": 26000,
+    "business": 46000,
     "advanced": null
   },
   "maintenance": {
