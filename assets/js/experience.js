@@ -4,8 +4,27 @@
  const explorer=document.querySelector('.service-explorer');
  if(explorer){
   const choices=[...explorer.querySelectorAll('[data-service-choice]')];
+  const mobileControls=document.createElement('div');
+  mobileControls.className='mobile-service-controls';
+  const pills=document.createElement('div');
+  pills.className='mobile-service-pills';pills.setAttribute('role','group');pills.setAttribute('aria-label','Explore our services');
+  const description=document.createElement('div');description.className='mobile-service-description';description.id='mobile-service-description';description.setAttribute('aria-live','polite');
+  const mobileButtons=choices.map(choice=>{
+   const button=document.createElement('button');button.type='button';button.setAttribute('aria-controls',description.id);
+   const label=choice.querySelector('summary').childNodes[0].textContent.trim();
+   button.innerHTML='<span aria-hidden="true">+</span>'+label;
+   button.addEventListener('click',()=>{choice.open=true;syncMobile(choice);});
+   pills.append(button);return button;
+  });
+  function syncMobile(choice){
+   mobileButtons.forEach((button,i)=>{const selected=choices[i]===choice;button.setAttribute('aria-pressed',String(selected));button.querySelector('span').textContent=selected?'−':'+';});
+   description.replaceChildren(choice.querySelector('.service-answer').cloneNode(true));
+  }
+  mobileControls.append(pills,description);explorer.append(mobileControls);explorer.classList.add('mobile-explorer-ready');
+  syncMobile(choices.find(choice=>choice.open)||choices[0]);
   choices.forEach(choice=>choice.addEventListener('toggle',()=>{
    if(!choice.open)return;
+   syncMobile(choice);
    explorer.dataset.service=choice.dataset.serviceChoice;
    choices.forEach(other=>{if(other!==choice)other.open=false;});
    explorer.querySelectorAll('[data-service-scene]').forEach(scene=>{scene.hidden=scene.dataset.serviceScene!==choice.dataset.serviceChoice;});
