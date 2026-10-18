@@ -1,18 +1,18 @@
 window.SITE_CONFIG = {
-  "brand": "hahumarketing",
-  "ownerName": "hahumarketing",
-  "email": "hahumarketinginfo@gmail.com",
-  "phone": "+1 443-333-9976",
-  "whatsapp": "14433339976",
-  "formEndpoint": "https://formspree.io/f/mjygajon",
-  "siteUrl": "https://hahumarketing.com",
-  "prices": {
-    "starter": 26000,
-    "business": 46000,
-    "advanced": null
+  brand: "hahumarketing",
+  ownerName: "hahumarketing",
+  email: "hahumarketinginfo@gmail.com",
+  phone: "+1 443-333-9976",
+  whatsapp: "14433339976",
+  formEndpoint: "https://formspree.io/f/mjygajon",
+  siteUrl: "https://hahumarketing.com",
+  prices: {
+    starter: 26000,
+    business: 46000,
+    advanced: null,
   },
-  "maintenance": {
-    "essential": 10000,
-    "care": 20000
-  }
+  maintenance: {
+    essential: 10000,
+    care: 20000,
+  },
 };
