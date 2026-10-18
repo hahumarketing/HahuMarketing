@@ -2361,15 +2361,185 @@ summary:focus-visible {
     position: relative;
   }
 }
-/* Reduce spacing above the contact section */
-.page-intro:has(+ .contact-layout) {
-  padding-bottom: 16px;
-}
 
-.contact-layout aside {
-  padding-top: 0;
+/* Category marquee — above the Good design section. */
+.audience-marquee {
+  padding: 24px 0 36px;
 }
-
-.contact-layout .contact-steps {
-  margin-top: 0;
+.audience-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.audience-heading h2 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+.audience-pause {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #dde2ea;
+  border-radius: 50%;
+  background: transparent;
+  color: #657189;
+  cursor: pointer;
+  font-size: 15px;
+}
+.audience-pause:hover {
+  color: #2864ee;
+  border-color: #2864ee;
+}
+.audience-pause:focus-visible,
+.audience-window:focus-visible {
+  outline: 2px solid #2864ee;
+  outline-offset: 3px;
+}
+.audience-window {
+  overflow: hidden;
+  width: 100%;
+}
+.audience-track {
+  display: flex;
+  width: max-content;
+  animation: audience-scroll 65s linear infinite;
+}
+.audience-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+  padding: 0 6px 0 0;
+  margin: 0;
+  list-style: none;
+}
+.audience-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 232px;
+  width: 232px;
+  height: 140px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #edf0f2;
+  color: #182130;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.05;
+  text-align: center;
+  white-space: nowrap;
+}
+.audience-type-1 {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -2px;
+  font-size: 39px;
+}
+.audience-type-2 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+.audience-type-3 {
+  font-family: "Arial Black", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 28px;
+}
+.audience-type-4 {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-style: italic;
+  letter-spacing: -1.5px;
+  font-size: 27px;
+}
+.audience-type-5 {
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-size: 34px;
+}
+.audience-type-6 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 32px;
+}
+.audience-type-7 {
+  font-family: "Courier New", monospace;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+.audience-type-8 {
+  font-family: Arial, sans-serif;
+  font-size: 27px;
+  letter-spacing: -1.6px;
+}
+.audience-type-9 {
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-size: 32px;
+}
+.audience-type-10 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-size: 32px;
+}
+.audience-type-11 {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -1.7px;
+  font-size: 34px;
+}
+.audience-type-12 {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.audience-marquee.is-paused .audience-track,
+.audience-window:hover .audience-track,
+.audience-window:focus-within .audience-track {
+  animation-play-state: paused;
+}
+@keyframes audience-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 580px) {
+  .audience-marquee {
+    padding: 16px 0 24px;
+  }
+  .audience-heading {
+    margin-bottom: 15px;
+  }
+  .audience-heading h2 {
+    font-size: 18px;
+  }
+  .audience-tile {
+    flex-basis: 205px;
+    width: 205px;
+    height: 112px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .audience-track {
+    animation: none;
+  }
+  .audience-window {
+    overflow-x: auto;
+  }
+  .audience-group[aria-hidden="true"],
+  .audience-pause {
+    display: none;
+  }
 }
