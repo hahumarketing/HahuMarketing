@@ -2361,3 +2361,15 @@ summary:focus-visible {
     position: relative;
   }
 }
+/* Reduce spacing above the contact section */
+.page-intro:has(+ .contact-layout) {
+  padding-bottom: 16px;
+}
+
+.contact-layout aside {
+  padding-top: 0;
+}
+
+.contact-layout .contact-steps {
+  margin-top: 0;
+}
