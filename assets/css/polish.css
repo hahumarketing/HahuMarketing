@@ -105,3 +105,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  .mobile-service-description .service-answer p{font-size:14px;line-height:1.55;margin:0 0 10px;color:#526078}
  .mobile-service-description .text-link{font-size:12px}
 }
+
+/* Keep both mobile illustrations clear of their controls and text. */
+@media(max-width:580px){
+ .service-scene[data-service-scene="growth"] .search-composition{padding:8px 0;height:300px}
+ .service-scene[data-service-scene="growth"] .visual-search{min-height:48px;padding:10px 15px;font-size:11px;line-height:1.4}
+ .service-scene[data-service-scene="growth"] .search-result{margin:12px 8px 0;padding:16px}
+ .service-scene[data-service-scene="growth"] .search-result>span{display:block;line-height:1.4}
+ .service-scene[data-service-scene="growth"] .search-result strong{font-size:18px;line-height:1.15;margin:6px 0}
+ .service-scene[data-service-scene="growth"] .search-result p{font-size:10px;line-height:1.4}
+ .service-scene[data-service-scene="growth"] .growth-bars{height:74px;gap:9px;margin-top:8px}
+ .service-scene[data-service-scene="growth"] .search-result small{display:block;line-height:1.4;margin-top:7px}
+ .service-scene[data-service-scene="social"] .social-art i{font-size:0;width:30px;height:30px;right:12px;bottom:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2v28M2 16h28M6 6l20 20M6 26L26 6' fill='none' stroke='%23bfd1ff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+ .service-scene[data-service-scene="social"] .social-art b{font-size:27px;line-height:1.05;display:block;position:relative}
+}
