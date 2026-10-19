@@ -2543,3 +2543,14 @@ summary:focus-visible {
     display: none;
   }
 }
+/* Hide the pause button and keep the marquee scrolling. */
+.audience-pause {
+  display: none;
+}
+
+.audience-marquee .audience-track,
+.audience-marquee.is-paused .audience-track,
+.audience-window:hover .audience-track,
+.audience-window:focus-within .audience-track {
+  animation-play-state: running;
+}
